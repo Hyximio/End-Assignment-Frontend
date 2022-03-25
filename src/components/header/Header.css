@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
+
+* {
+
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size:25px;
+    /*background-color: hsl(35, 40%, 91%);*/
+}
+
+h1 {
+    font-size:40px;
+    color:yellow;
+    padding-right:20px;
+
+}
+
+nav {
+    background-color: hsl(211, 65%, 14%);
+    color: white;
+    padding: 5px;
+
+    display: flex;
+    justify-content: center;
+}
+
+
+/*#hamburger-menu {*/
+/*    width: 30px;*/
+/*    !*We hebben deze nodig zodat hij wisselt tussen zichtbaar (block) en onzichtbaar (none)*!*/
+/*    display: block;*/
+/*}*/
+
+/*#hamburger-menu:hover {*/
+/*    cursor: pointer;*/
+/*}*/
+
+.nav-container {
+    /*width: 800px;*/
+    flex-basis: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+
+}
+
+/*.nav-container ul {*/
+/*    !*de menu items worden niet weergegeven op mobiel*!*/
+/*    !*display: none;*!*/
+/*    */
+/*    */
+
+
+/*}*/
+
+.nav-container ul {
+    /*de menu items worden wel weergegeven op desktop*/
+    display: flex;
+    flex-basis: 500px;
+    justify-content: space-between;
+    list-style-type: none;
+
+
+    /*border-style: dotted;*/
+}
+
+ul li {
+    cursor: pointer;
+}
+
+.active-link {
+    text-decoration: underline;
+    color:red;
+}
+
+.link {
+    /*color:inherit;*/
+    /*text-decoration: line-through;*/
+    /*text-decoration:initial;*/
+}
+
+/*a:link {*/
+/*    */
+/*}*/
+
+/*@media screen and (min-width: 575px) {*/
+/*    #hamburger-menu {*/
+/*        !*icoon wordt niet weergegeven op mobiel*!*/
+/*        display: none;*/
+/*    }*/
+
+/*    .nav-container ul {*/
+/*        !*de menu items worden wel weergegeven op desktop*!*/
+/*        display: flex;*/
+/*        flex-basis: 500px;*/
+/*        justify-content: space-between;*/
+/*    }*/
+/*}*/
