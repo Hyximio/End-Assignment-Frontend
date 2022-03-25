@@ -1,19 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
 
-* {
 
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
 
 body {
     font-family: 'Yanone Kaffeesatz', sans-serif;
     font-size:25px;
     /*background-color: hsl(35, 40%, 91%);*/
+    background-color: grey;
 }
 
-h1 {
+.header-title {
     font-size:40px;
     color:yellow;
     padding-right:20px;

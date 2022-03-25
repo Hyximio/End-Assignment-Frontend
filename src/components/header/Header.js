@@ -8,7 +8,7 @@ function Header( {} ) {
         <>
             <nav>
                 <div className="nav-container">
-                    <h1>BREWDOG</h1>
+                    <h1 className="header-title">BREWDOG</h1>
                     <ul>
                         <li>
                             <NavLink to="/" exact className="link" activeClassName="active-link">Home</NavLink>
