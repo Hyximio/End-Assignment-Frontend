@@ -1,13 +1,18 @@
 import axios from 'axios';
+import {useContext} from "react";
+import {BeerDataContext} from "../context/BeerDataContext";
+import cleanupBeerData from "./cleanupBeerData";
 
-function getAllData( _setGotData, _data, _setData, _abortCtrl ) {
+function getAllData( _beerDataContext, _abortCtrl ) {
+
+    const { setCollectedAll, beerData, setBeerData } = _beerDataContext;
 
     async function fetchData() {
 
         try {
             let storage = [];
             let result;
-            let page = Math.floor(_data.length / 80);
+            let page = Math.floor(beerData.length / 80);
 
             do {
                 page++;
@@ -18,19 +23,25 @@ function getAllData( _setGotData, _data, _setData, _abortCtrl ) {
 
                 // Break loop if no more data can be collected
                 if (result.data.length === 0) {
-                    _setGotData(true);
+
                     break;
                 }
 
                 // Add the data to the storage and combined data to the beerData
                 storage = storage.concat( result.data );
-                _setData( storage );
+                setBeerData( storage );
+                console.log( storage );
 
             } while( result.data.length !== 0 )
+
+            const cleanedBeerData = cleanupBeerData(storage);
+            setBeerData( cleanedBeerData );
+            setCollectedAll(true);
 
         } catch (e) {
             console.log(e);
         }
+
     }
 
     fetchData();

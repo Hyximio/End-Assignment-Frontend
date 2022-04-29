@@ -8,11 +8,10 @@ function minMaxValue( _typeName, _value ){
             maxValue = 55;
             break;
         case "bitterness":
-            maxValue = 1157;
+            maxValue = 120;
             break;
         case "acidity":
-            if (_value > 10) { _value /= 10 } // fix in the data
-            maxValue = 6;
+            maxValue = 8;
             break;
     }
     const roundedVal = Math.floor( ( 100 / maxValue ) * _value );

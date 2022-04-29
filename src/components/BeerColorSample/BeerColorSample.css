@@ -1,0 +1,11 @@
+.beer-color-sample {
+    background-color: red;
+    width:20px;
+    height:20px;
+    border-radius: 10px;
+    border-style:solid;
+    border-width: 1px;
+    position: absolute;
+    margin-top: 10px;
+    box-shadow: 1px 1px 0 0 rgba(0, 0, 0, .4);
+}

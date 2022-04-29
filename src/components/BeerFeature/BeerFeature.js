@@ -6,6 +6,11 @@ function BeerFeature( {typeName, value} ) {
 
     const barWidth = minMaxValue( typeName, value );
 
+    // Adding a '+' symbol if value is above 120
+    if (typeName.toLowerCase() === "bitterness"){
+        if (value === 120) value = "120+"
+    }
+
     return (
         <>
             <div className="tile-details-row">

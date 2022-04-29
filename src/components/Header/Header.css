@@ -70,16 +70,26 @@ ul li {
     cursor: pointer;
 }
 
-.active-link {
-    text-decoration: underline;
-    color:red;
-}
-
 .link {
-    /*color:inherit;*/
+    color:white;
     /*text-decoration: line-through;*/
     /*text-decoration:initial;*/
+
 }
+
+.link:hover {
+    color:lightgray;
+}
+.active-link {
+    text-decoration: underline;
+    color:yellow;
+}
+.active-link:hover {
+    color:yellow;
+    cursor:default;
+}
+
+
 
 /*a:link {*/
 /*    */
