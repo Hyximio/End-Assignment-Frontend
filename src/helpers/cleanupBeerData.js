@@ -17,7 +17,6 @@ function cleanupBeerData( _beerData ) {
         _beerData[i].srm /= 10;
     }
 
-    console.log( _beerData.length );
     return _beerData;
 }
 
