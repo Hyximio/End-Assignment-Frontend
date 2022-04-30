@@ -1,0 +1,130 @@
+
+.flex-row {
+    display:flex;
+}
+
+.tabs-body{
+    background-color: white;
+    /*border-radius: 0 0 20px 20px;*/
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+}
+
+.tabs-body-rounded{
+    display:flex;
+    flex-direction: column;
+    /*border-radius: 20px;*/
+}
+
+.error {
+    color: red;
+    font-size:12px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right:5px;
+}
+
+fieldset{
+    border-width: 0;
+
+}
+.submit-button{
+
+    font-size: 20px;
+    width:150px;
+    padding:10px;
+    /*border-radius: 5px;*/
+    margin:20px auto;
+
+
+}
+
+.submit-button:hover:enabled{
+    background-color: lightgray;
+    cursor:pointer;
+}
+
+.submit-button:hover:disabled{
+    cursor:default;
+}
+
+.input-fields {
+    padding:50px;
+    display:flex;
+    flex-direction: column;
+}
+
+.input-label {
+    display:flex;
+    flex-direction:column;
+    height:60px;
+
+    /*padding:20px;*/
+}
+
+.agreement{
+    /*display:block;*/
+    /*flex-direction: row;*/
+}
+.agreement-text{
+    padding:20px;
+    margin-top:0;
+    margin-right:5px;
+
+}
+
+.agreement-link{
+    color:blue;
+    cursor:pointer;
+    margin-left:5px;
+}
+.agreement-link:hover{
+    color:lightblue;
+    cursor:pointer;
+}
+
+
+.fields{
+    height:20px;
+    margin-top:5px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+
+
+}
+.tab-active {
+    background-color: white;
+    border-radius: 20px 20px 0 0;
+    padding:10px 60px;
+    flex-grow: 1;
+    font-weight: bold;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.tab-inactive {
+    background-color: lightgray;
+    border-radius: 20px 20px 0 0;
+    padding:10px 60px;
+    cursor:pointer;
+    flex-grow: 1;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.accept-conditions {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.tab-text{
+    text-align: center;
+}
+.container-login{
+    display: flex;
+    justify-content: center;
+    flex-direction:column;
+    max-width:500px;
+    margin:20px auto 0 auto;
+}
