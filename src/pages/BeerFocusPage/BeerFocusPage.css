@@ -1,17 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&display=swap');
 
-/**{*/
-/*    margin:0;*/
-/*    padding:0;*/
-/*    box-sizing: border-box;*/
-
-/*    font-family: 'Ubuntu Mono', monospace;*/
-
-/*}*/
-
-/*body{*/
-/*    background-color: red;*/
-/*}*/
 .beer-title{
     padding:20px;
     font-size: 30px;
@@ -19,10 +6,11 @@
 .beer-tag{
     padding:20px;
     font-style: italic;
-    font-size:15px;
+    font-size:20px;
 }
 .beer-description{
     padding:0px 20px;
+    font-size: 15px;
 }
 .meal-title {
     padding-left:30px;
@@ -32,27 +20,14 @@
     padding-left:50px;
 }
 
-.button-drunk{
-    display: flex;
-    /*justify-content: center;*/
-    margin:auto;
-    margin-top:20px;
-    background-color: hsl(120, 30%, 60%);
-    padding:20px;
-    font-size: 20px;
-    border-radius: 20px;
 
-}
 .container-beer{
-    /*background-color: red;*/
+
     display: flex;
     justify-content: center;
-    /*flex-basis: 1000px;*/
     max-width:600px;
     margin:20px auto 0 auto;
-    border-radius: 20px;
     border: 1px solid black;
-    /*margin-top:20px;*/
     padding-bottom:20px;
 
     background-color: white;
@@ -61,7 +36,6 @@
 
     display:flex;
     flex-direction:column;
-
 }
 
 .beer-header{
@@ -72,6 +46,7 @@
 .beer-body{
     display: flex;
     flex-direction: row;
+    font-size: 20px;
 }
 .beer-color {
     position:absolute;
@@ -80,8 +55,8 @@
     height:100%;
     background-color: hsl(60, 100%, 50%);
 
-    -webkit-mask-image:url(../assets/Beer_ColorMask_02.png);
-    mask-image:url(../assets/Beer_ColorMask_02.png);
+    -webkit-mask-image:url(../../assets/Beer_ColorMask_02.png);
+    mask-image:url(../../assets/Beer_ColorMask_02.png);
 
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
@@ -97,6 +72,7 @@
     display: flex;
     flex-direction: row;
     padding:10px 40px;
+    font-size: 15px;
 }
 
 .beer-details-type{
@@ -104,6 +80,7 @@
 }
 .meals {
     list-style-type: circle;
+    font-size: 15px;
 }
 
 .button-close {
@@ -126,7 +103,6 @@
 .button-close::before,
 .button-close::after {
     background-color: hsl(0,0%, 50%);
-    /*display: block;*/
     content: "";
     width: 5px;
     height: 30px;
@@ -143,9 +119,39 @@
 }
 
 
+
 .beer-img{
     padding-right:20px;
 }
 .beer-image-container {
     position: relative;
+}
+
+.potential-header {
+    margin:auto;
+    border-radius: 5px;
+    padding: 5px;
+}
+.potential-container {
+    display: flex;
+    justify-content: center;
+
+    max-width:400px;
+    margin:20px auto 10px auto;
+
+    padding-bottom:20px;
+
+}
+.potential-list {
+    display:grid;
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+}
+
+.beer-list-single{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap:10px;
+    width:100%;
+    list-style-type: none;
 }

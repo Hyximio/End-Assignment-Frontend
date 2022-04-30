@@ -1,32 +1,37 @@
 import React, {useContext, useEffect, useState} from 'react';
-import './BeerFocus.css';
-import { useParams } from "react-router-dom";
-import {BeerDataContext} from "../context/BeerDataContext";
-import getSingleBeer from "../helpers/getSingleBeer";
-import glassBeer from '../assets/Beer_GreyedOut.png';
-import getBeerColor from "../helpers/getBeerColor";
+import './BeerFocusPage.css';
+import {Link, useParams} from "react-router-dom";
+import {BeerDataContext} from "../../context/BeerDataContext";
+import glassBeer from '../../assets/Beer_GreyedOut.png';
+import getBeerColor from "../../helpers/getBeerColor";
 import {useHistory} from "react-router-dom";
-import BeerItems from "../components/BeerItems/BeerItems";
-// import srmReferenceCard from './assets/srm_reference_card.png';
+import BeerItems from "../../components/BeerItems/BeerItems";
+import {getPotentialBeerByBeer} from "../../helpers/getPotentialBeer";
+import getAllData from "../../helpers/getAllData";
 
-function BeerFocus( {beer} ) {
+
+function BeerFocusPage() {
 
     const { id } = useParams();
-    const { beerData, collectedAll } = useContext( BeerDataContext );
     const [targetBeer, setTargetBeer] = useState( null );
 
-    const history = useHistory();
+    const beerDataContext = useContext( BeerDataContext );
+    const { beerData, collectedAll } = beerDataContext;
 
     useEffect( () => {
 
-        const controller = new AbortController();
+        if ( collectedAll ) {
 
-        if ( collectedAll ){
             const idBeer = beerData.find( (beer) => (beer.id - 1).toString() === id);
             setTargetBeer( idBeer );
-        }else {
-            getSingleBeer( id, controller, setTargetBeer );
+
+            console.log( "Data already collected");
+            return;
         }
+
+        const controller = new AbortController();
+        getAllData( beerDataContext, controller );
+
 
         return function cleanup() { controller.abort() }
 
@@ -34,9 +39,16 @@ function BeerFocus( {beer} ) {
 
 
     let meals
+    let potentialBeers = []
+
     if (targetBeer) {
         meals = targetBeer.food_pairing.map((meal) => <li key={meal}>{meal}</li>);
-        console.log( targetBeer );
+
+        const potentialBeersList = getPotentialBeerByBeer( beerData, targetBeer);
+
+        for( let i = 1; i < 7; i++){
+            potentialBeers.push( potentialBeersList[i])
+        }
     }
 
     return (
@@ -46,7 +58,7 @@ function BeerFocus( {beer} ) {
                 <section className="beer-summery">
                     <div className="beer-header">
                         <h1 className="beer-title">{targetBeer.name}</h1>
-                        <span className="button-close" onClick={history.goBack}/>
+                        <Link to="/overview" className="button-close" />
                     </div>
                     <div className="beer-body">
                         <div>
@@ -71,9 +83,6 @@ function BeerFocus( {beer} ) {
                             <ul className="meals">
                                 {meals}
                             </ul>
-                            {/*<button className="button-drunk">*/}
-                            {/*I drunk this beer!*/}
-                            {/*</button>*/}
                         </div>
                         <div className="beer-column">
 
@@ -86,13 +95,13 @@ function BeerFocus( {beer} ) {
 
                 </section>
             </div>
-            <div >
-                <h3 className="container-beer">6 other beers you may also like:</h3>
-                <BeerItems targetBeer={targetBeer} />
+            <div className="potential-container potential-list">
+                <h3 className="potential-header">Other beers that are similar:</h3>
+                {potentialBeers && <BeerItems beerData={potentialBeers} setter={setTargetBeer}/> }
              </div>
         </>
         )
     )
 }
 
-export default BeerFocus;
+export default BeerFocusPage;

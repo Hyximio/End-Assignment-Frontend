@@ -25,6 +25,9 @@ function getPotentialBeer( _beerData, _abv, _ph, _ibu ){
 }
 
 function getPotentialBeerByBeer( _beerData, _beer ) {
+
+    console.log( _beerData );
+    console.log( _beer );
     // Remove current beer
     const limitData = _beerData.filter( beer => beer.id !== _beer.id );
     const {abv, ph, ibu} = _beer;
@@ -35,14 +38,5 @@ function getPotentialBeerByBeer( _beerData, _beer ) {
     return sortedBeer;
 }
 
-// function getSimilarBeers( _beerData, _beer ){
-//
-//     const {abv, ph, ibu} = _beer;
-//     let targetDifValue = getBeerDifValue( _beerData[0], _abv, _ph, _ibu );
-//
-//     for( let i=1; i < _beerData.length; i++) {
-//
-//     }
-// }
 
 export {getPotentialBeer, getPotentialBeerByBeer};

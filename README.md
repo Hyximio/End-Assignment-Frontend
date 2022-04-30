@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# README van deze Brewdog website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+
+## inleiding
+
+Heb je wel eens een Brewdog bier gedronken? Wellicht vond hem heerlijk, maar welke was het ook alweer en welke andere brewdogs bieren zijn na dit verrukkelijke biertje ook de moeite waard om eens te gaan proberen? Ik wens je alvast veel succes en geduld om alle 100en brewdogs bieren te vergelijken en welk brewdog bier de volgende aanwinst voor jou gaat worden want dit zijn er nog wel wat.
+
+Deze applicatie gaat hier een oplossing voor bieden om grip op de zaak te krijgen. Op de website zelf kan je een lijst zien van alle beschikbare brewdog bieren met bijbehorende eigenschappen zoals bitterheid en alcohol percentage.
+
+Je kan aan de hand van filters gemakkelijk de biertjes sorteren op een specifieke eigenschap zodat je een idee krijgt waarin de biertjes zich verschillen. Als je vervolgens echt meer te weten wil komen over het biertje kan je naar de pagina gaan waar alle details van het biertje op een rij staat. Een beschrijving en ook bij welke gerechten dit biertje het beste tot zijn recht komt.
+
+Als je geen zin hebt om altijd bij hetzelfde biertje te blijven je ook jezelf verder verdiepen in vergelijkbare biertjes die tevens ook op de website worden opgesomd.
+
+Op deze manier heeft de gebruiker een makkelijke manier om zicht te krijgen op alle beschikbare bieren van de Brewdog brouwerij.
+
+![screenshot](src/assets/Screenshot_OverviewPage.jpg)
+
+#Dependencies
+    "axios": "^0.26.1"
+    "jwt-decode": "^3.1.2"
+    "random-seedable": "^1.0.8"
+    "react": "^17.0.2"
+    "react-dom": "^17.0.2"
+    "react-hook-form": "^7.30.0"
+    "react-router-dom": "^5.2.0"
+    "react-scripts": "5.0.0"
+    "web-vitals": "^2.1.4"
+
+#API's
+
+Dit project maakt gebruik van de punk API om gegevens van de brewdog beers binnen te halen:
+https://punkapi.com/documentation/v2
+
+Voor inloggen en regristreren van nieuwe accounts maakt het gebruik van de Novi back-end.
+
+# Installation steps
+
+installeer alle dependencies voor het runnen van deze app. Doe dit met het commando 
+
+### `npm install`
+
+Na dat alles is geinstalleerd run de app via
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Credits
 
-### `npm test`
+Dit project is het eind opdracht van de front-end leerlijn van Novi.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+_Mick Munsterman_
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+_1-5-2022_

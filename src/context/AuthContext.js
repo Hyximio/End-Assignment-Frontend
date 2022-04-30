@@ -14,7 +14,6 @@ function AuthContextProvider( {children}){
     })
 
     useEffect( () => {
-        console.log( "Tries to log in " );
 
         const token = localStorage.getItem('token');
 
@@ -31,7 +30,7 @@ function AuthContextProvider( {children}){
                 })
 
                 // token is expired, go to signIn screen
-                // history.push( '/signin');
+                history.push( '/signin');
             }
 
         }else{
@@ -70,11 +69,9 @@ function AuthContextProvider( {children}){
         }catch(e){
             console.error(e)
 
-            console.log( e.response );
-
             switch( e.response.status ){
                 case 500:
-                    // specific response
+                    // specific responses
                     break
 
             }
@@ -147,7 +144,6 @@ function AuthContextProvider( {children}){
     function login( _username, _password ){
 
         signIn( _username, _password );
-
         history.push( '/');
     }
 
@@ -158,14 +154,13 @@ function AuthContextProvider( {children}){
             user: null,
         });
 
-        history.push( '/home');
+        history.push( '/');
     }
 
     function register( _username, _email, _password ) {
         signUp( _username, _email, _password )
 
         history.push( '/');
-        // console.log( response );
     }
 
     // Populate the contextData for the AuthContext

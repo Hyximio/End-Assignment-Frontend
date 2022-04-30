@@ -1,40 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
-
-
-
-body {
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    font-size:25px;
-    /*background-color: hsl(35, 40%, 91%);*/
-    background-color: grey;
-}
 
 .header-title {
     font-size:40px;
-    color:yellow;
+    color:hsl(41, 100%, 80%);
     padding-right:20px;
 
 }
 
-nav {
-    background-color: hsl(211, 65%, 14%);
+.header-bar {
+    background-color: hsl(41, 0%, 80%);
     color: white;
     padding: 5px;
 
     display: flex;
     justify-content: center;
 }
-
-
-/*#hamburger-menu {*/
-/*    width: 30px;*/
-/*    !*We hebben deze nodig zodat hij wisselt tussen zichtbaar (block) en onzichtbaar (none)*!*/
-/*    display: block;*/
-/*}*/
-
-/*#hamburger-menu:hover {*/
-/*    cursor: pointer;*/
-/*}*/
 
 .nav-container {
     /*width: 800px;*/
@@ -46,65 +25,27 @@ nav {
 
 }
 
-/*.nav-container ul {*/
-/*    !*de menu items worden niet weergegeven op mobiel*!*/
-/*    !*display: none;*!*/
-/*    */
-/*    */
-
-
-/*}*/
-
 .nav-container ul {
-    /*de menu items worden wel weergegeven op desktop*/
     display: flex;
-    flex-basis: 500px;
+    flex-basis: 300px;
     justify-content: space-between;
     list-style-type: none;
-
-
-    /*border-style: dotted;*/
 }
 
-ul li {
-    cursor: pointer;
-}
+
 
 .link {
-    color:white;
-    /*text-decoration: line-through;*/
-    /*text-decoration:initial;*/
-
+    color:hsl(41, 100%, 88%);
 }
 
 .link:hover {
-    color:lightgray;
+    color:hsl(41, 100%, 95%);
 }
 .active-link {
     text-decoration: underline;
-    color:yellow;
+    color:hsl(41, 100%, 40%);
 }
 .active-link:hover {
-    color:yellow;
+    color:hsl(41, 100%, 40%);
     cursor:default;
 }
-
-
-
-/*a:link {*/
-/*    */
-/*}*/
-
-/*@media screen and (min-width: 575px) {*/
-/*    #hamburger-menu {*/
-/*        !*icoon wordt niet weergegeven op mobiel*!*/
-/*        display: none;*/
-/*    }*/
-
-/*    .nav-container ul {*/
-/*        !*de menu items worden wel weergegeven op desktop*!*/
-/*        display: flex;*/
-/*        flex-basis: 500px;*/
-/*        justify-content: space-between;*/
-/*    }*/
-/*}*/

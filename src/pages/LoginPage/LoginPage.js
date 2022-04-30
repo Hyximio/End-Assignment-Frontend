@@ -1,13 +1,12 @@
 import React, {useContext, useState} from 'react';
 import './LoginPage.css';
 import {useForm} from "react-hook-form";
-import {AuthContext} from "../context/AuthContext";
-import {Link} from "react-router-dom";
-import TermsOfAgreement from "../components/TermsOfAgreement/TermsOfAgreement";
+import {AuthContext} from "../../context/AuthContext";
+import TermsOfAgreement from "../../components/TermsOfAgreement/TermsOfAgreement";
+
 function LoginPage( {} ) {
 
     const authContext = useContext( AuthContext );
-    console.log( authContext );
 
     const {register, formState:{errors}, handleSubmit, watch} = useForm( {
         mode:'onTouched'
@@ -93,7 +92,7 @@ function LoginPage( {} ) {
                 <div className="tabs-body">
                     <form onSubmit={handleSubmit(onFormRegister)}>
 
-                        <fieldset className="input-fields">
+                        <div className="input-fields">
                             <label htmlFor="details-username"
                                    className="input-label">
                                 Username:
@@ -173,24 +172,25 @@ function LoginPage( {} ) {
 
                                 {errors.confirmPassword && <p className="error">{errors.confirmPassword.message}</p>}
                             </label>
-                            <label htmlFor="accept-conditions"
-                                   className="agreement">
-                                <input
-                                    className="agreement-text"
-                                    type="checkbox"
-                                    onClick={() => setConditions( !conditions )}
-                                />I accept the</label>
-                                <p
-                                className="agreement-link"
-                                onClick={() => setShowLogin("Terms")}>terms of agreement</p>
-
+                            <div className="flex-row">
+                                <label htmlFor="accept-conditions"
+                                       className="agreement">
+                                    <input
+                                        className="agreement-text"
+                                        type="checkbox"
+                                        onClick={() => setConditions( !conditions )}
+                                    />I accept the</label>
+                                    <p
+                                    className="agreement-link"
+                                    onClick={() => setShowLogin("Terms")}>terms of agreement</p>
+                            </div>
                             <button
                                 className="submit-button"
                                 type="submit"
                                 disabled={!conditions}>
                                 Register
                             </button>
-                        </fieldset>
+                        </div>
                     </form>
                 </div>
                 }

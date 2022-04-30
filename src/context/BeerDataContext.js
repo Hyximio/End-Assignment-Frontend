@@ -1,4 +1,4 @@
-import React, {createContext, useState} from 'react';
+import React, {createContext, useRef, useState} from 'react';
 
 export const BeerDataContext = createContext(null);
 
@@ -6,19 +6,15 @@ function BeerDataContextProvider( {children}){
 
     const [collectedAll, setCollectedAll] = useState( false );
     const [beerData, setBeerData] = useState( [] );
+    const bufferData = useRef([]);
 
     const beerContext = {
-        beerData:beerData,
-        setBeerData:setBeerData,
-        collectedAll:collectedAll,
-        setCollectedAll:setCollectedAll,
+        beerData,
+        setBeerData,
+        collectedAll,
+        setCollectedAll,
+        bufferData,
         sort: function( _sort ){
-
-            // Convert to existing object keys
-            // _sort = _sort === "alcohol"    ? "abv" : _sort;
-            // _sort = _sort === "acidity"    ? "ph"  : _sort;
-            // _sort = _sort === "bitterness" ? "ibu" : _sort;
-            // _sort = _sort === "beer color" ? "srm" : _sort;
 
             function dateToInt( _date ){
                 const parts = _date.split("/");
@@ -44,14 +40,8 @@ function BeerDataContextProvider( {children}){
                     this.setBeerData( this.beerData.sort( (a, b) => a[_sort] - b[_sort] ) );
                     break;
 
-                // Tmp to find longest name
-                case "name length":
-                    this.setBeerData( this.beerData.sort( (a, b) => a.name.length - b.name.length ) );
-                    break;
-
                 default:console.log("No sort type supported: " + _sort)
             }
-            // this.beerData.map
         }
     }
 

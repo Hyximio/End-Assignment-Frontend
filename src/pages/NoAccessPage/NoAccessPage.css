@@ -1,0 +1,8 @@
+.no-access-message{
+    display:flex;
+    justify-content:center;
+    background-color: hsl(0, 20%, 30%);
+    color:red;
+    margin-top:40px;
+    text-align: center;
+}

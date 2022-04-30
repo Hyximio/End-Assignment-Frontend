@@ -1,0 +1,51 @@
+
+.tile-details-row {
+    display:flex;
+    flex-grow:1;
+    align-items: center;
+}
+
+.graph-type{
+    display:flex;
+    flex-basis: 80px;
+    justify-content: right;
+    margin-right:5px;
+
+}
+
+.graph-box {
+    flex-grow:1;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+
+    height:5px;
+    border-radius:2px;
+    border-color: black;
+}
+
+.graph-box--bar {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+    height:100%;
+    border-radius:2px;
+}
+
+.graph-value {
+    display:flex;
+    flex-basis: 60px;
+    margin-left:5px;
+}
+
+.alcohol {
+    background-color: blue;
+    width:80%;
+}
+.bitterness {
+    background-color: orange;
+    width:30%;
+}
+
+.acidity {
+    background-color: purple;
+    width:10%;
+}
